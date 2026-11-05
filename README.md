@@ -20,17 +20,37 @@ Você não precisa saber programar. O próprio assistente conduz a instalação,
 
 ## Como instalar
 
-1. **Baixe este projeto.** No GitHub, abra **Releases** e baixe o `.zip` da versão mais recente (ou **Code > Download ZIP**). Descompacte numa pasta do seu computador, por exemplo `Documentos/Emissor NFS-e`.
-2. **Abra o projeto no app:**
-   - **ChatGPT:** crie um projeto local com essa pasta (**Edit project > Add folder**).
+1. **Crie uma pasta vazia** no seu computador, por exemplo `Documentos/Emissor NFS-e`.
+2. **Abra essa pasta no app:**
+   - **ChatGPT:** no **modo Work**, crie um projeto local com essa pasta (**Edit project > Add folder**).
    - **Claude:** na aba **Code**, comece uma sessão escolhendo essa pasta.
 3. **Deixe o app pedindo a sua aprovação antes de rodar comandos.**
    - **ChatGPT:** "Ask for approval", no controle abaixo da caixa de mensagem. Não use "Full access".
    - **Claude:** o modo que pede permissão ("Ask permissions"). Não use "Bypass permissions" nem o modo automático.
    O motivo está na nota de segurança abaixo.
-4. **Escreva no chat:** `configurar`
+4. **Escreva no chat:** `Instale https://github.com/oibeta/emissor-nfse`
 
-A partir daí o assistente segue o roteiro do arquivo `INSTALACAO.md`: são 11 passos, e ele guarda onde parou. Se você interromper, é só abrir o projeto de novo e escrever `continuar a configuração`.
+O assistente baixa o emissor para a pasta e segue o roteiro do arquivo `INSTALACAO.md`: são 11 passos, e ele guarda onde parou. Se você interromper, é só abrir o projeto de novo e escrever `continuar a configuração`.
+
+**Prefere baixar à mão?** Em **Releases**, baixe o `emissor-nfse.zip` da versão mais recente, descompacte na pasta, abra a pasta no app (passos 2 e 3) e escreva `configurar`.
+
+## Para o agente: instalar pelo link
+
+Se a pessoa pediu para instalar a partir deste link, faça nesta ordem:
+
+1. **Confira a pasta.** Você precisa estar numa pasta do computador da pessoa, aberta no app, com permissão de escrita. Se não estiver (por exemplo, numa conversa na nuvem, sem pasta), pare: peça para a pessoa criar uma pasta vazia e abri-la no app, como nos passos 1 a 3 acima, e espere. Não baixe o pacote numa pasta temporária para adiantar.
+2. **Confira que a pasta está vazia.** Se já houver um `AGENTS.md`, o emissor já está instalado: não baixe de novo, siga o `AGENTS.md`. Se houver outros arquivos, pergunte se é a pasta certa antes de seguir.
+3. **Baixe e descompacte a versão mais recente na raiz da pasta.** O app vai pedir permissão de internet: explique que é para baixar o emissor do GitHub. Use o comando do sistema (o Python ainda não está instalado nesta etapa), rodado de dentro da pasta:
+   - **Windows (PowerShell):**
+     ```
+     $z = Join-Path $env:TEMP "emissor-nfse.zip"; Invoke-WebRequest "https://github.com/oibeta/emissor-nfse/releases/latest/download/emissor-nfse.zip" -OutFile $z; Expand-Archive $z -DestinationPath .; Remove-Item $z
+     ```
+   - **Mac (Terminal):**
+     ```
+     curl -fL -o /tmp/emissor-nfse.zip "https://github.com/oibeta/emissor-nfse/releases/latest/download/emissor-nfse.zip" && unzip -n /tmp/emissor-nfse.zip -d . && rm /tmp/emissor-nfse.zip
+     ```
+4. **Confira:** `AGENTS.md`, `INSTALACAO.md` e a pasta `codigo/` têm que estar na raiz da pasta, não numa subpasta.
+5. **Leia o `AGENTS.md` e comece o `INSTALACAO.md`** pelo passo 1, como se a pessoa tivesse escrito `configurar`.
 
 ## Como fica o dia a dia
 
