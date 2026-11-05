@@ -1,0 +1,39 @@
+{
+  "_leia": "Dados fixos da empresa. Cada valor sai de uma nota real já emitida pelo portal, nunca de memória. Campos que começam com _ são explicações. Este arquivo vira empresa.json na raiz do projeto.",
+
+  "ambiente": "restrita",
+  "_ambiente": "restrita = testes, sem valor fiscal. producao = notas reais. Só muda no último passo da instalação.",
+
+  "razao_social": "EMPRESA EXEMPLO LTDA",
+  "cnpj": "00000000000000",
+
+  "certificado_pfx": "C:/Users/voce/Certificados/certificado.pfx",
+  "_certificado_pfx": "Caminho completo do certificado A1, numa pasta FORA deste projeto e fora de Drive, OneDrive ou iCloud. A senha nunca entra aqui.",
+
+  "cloc_emi": "0000000",
+  "_cloc_emi": "Código IBGE (7 dígitos) do município da empresa. Tabela no docs/oficial/anexos/anexo_a.",
+
+  "cloc_prestacao": "0000000",
+  "_cloc_prestacao": "Código IBGE do local onde o serviço é prestado. Pode ser diferente do município da empresa.",
+
+  "ctrib_nac": "000000",
+  "ctrib_mun": "000",
+  "_ctrib": "Código de tributação nacional (6 dígitos) e complementar municipal. Copie da nota já emitida, sem conferir no anexo: a classificação é da contabilidade.",
+
+  "op_simp_nac": "3",
+  "reg_ap_trib_sn": "1",
+  "reg_esp_trib": "0",
+  "_regime": "3 = Simples Nacional ME/EPP (o caso que este projeto cobre). 1 = federais e municipal pelo Simples. 0 = sem regime especial. Confira no XML da nota já emitida, grupo regTrib.",
+
+  "aliq_simples_nacional": "0.00",
+  "_aliq": "Alíquota efetiva do Simples (%), que aparece como valor aproximado dos tributos. Muda com o faturamento: atualize quando a contabilidade mandar.",
+
+  "serie": "00001",
+  "_serie": "Faixa 00001-49999 = aplicativo próprio. NÃO copie a série 70000 da nota do portal: ela é do emissor Web e dá erro E0010.",
+
+  "ultimo_n_dps_antes_da_fila": 0,
+  "_ultimo_n_dps": "Deixe 0. Só muda se a empresa já emitiu notas por outro aplicativo com a série acima.",
+
+  "texto_fixo_descricao": "",
+  "_texto_fixo": "Texto que vai sempre no fim da descrição do serviço, por exemplo dados bancários. Copie da nota já emitida. Pode ficar vazio."
+}

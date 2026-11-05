@@ -1,0 +1,15 @@
+{
+  "id_pedido": "PED-2026-0001",
+  "remetente": "financeiro@cliente-exemplo.com.br",
+  "assunto": "Pedido de nota fiscal - proposta 0001",
+  "tomador_cnpj": "11.222.333/0001-81",
+  "tomador_nome": "CLIENTE EXEMPLO S.A.",
+  "tomador_cep": "01310-100",
+  "tomador_numero": "1000",
+  "tomador_complemento": "Andar 10",
+  "valor": "1.500,00",
+  "competencia": "2026-10-01",
+  "descricao": "Prestação de serviço conforme proposta 0001. Vencimento: {vencimento}.",
+  "prazo_dias": "30",
+  "vencimento": ""
+}

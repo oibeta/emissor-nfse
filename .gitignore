@@ -1,0 +1,22 @@
+# Certificado digital: NUNCA no repositório
+*.pfx
+*.p12
+
+# Dados da sua empresa e dos seus clientes
+empresa.json
+rotina.md
+progresso.md
+fila.csv
+fila.csv.bak
+notas/
+pedidos/
+amostras/
+codigo/danfse_modelo.pdf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Configuração local do app
+.claude/settings.local.json
